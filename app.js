@@ -66,16 +66,16 @@ function list(path){
 	 <div class="mdui-row"> 
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
-      <div class="mdui-col-xs-12 mdui-col-sm-7">
-       Tên
-      </div> 
-      <div class="mdui-col-sm-3 mdui-text-right">
-       Sửa đổi lần cuối
-      </div> 
-      <div class="mdui-col-sm-2 mdui-text-right">
-       Kích cỡ tệp
-      </div> 
-      </li> 
+	    <div class="mdui-col-xs-12 mdui-col-sm-7">
+	     Tên
+	    </div> 
+	    <div class="mdui-col-sm-3 mdui-text-right">
+	     Sửa đổi lần cuối
+	    </div> 
+	    <div class="mdui-col-sm-2 mdui-text-right">
+	     Kích cỡ tệp
+	    </div> 
+	    </li> 
 	  </ul> 
 	 </div> 
 	 <div class="mdui-row"> 
@@ -93,12 +93,12 @@ function list(path){
     $.post(path,'{"password":"'+password+'"}', function(data,status){
         var obj = jQuery.parseJSON(data);
         if(typeof obj != 'null' && obj.hasOwnProperty('error') && obj.error.code == '401'){
-            var pass = prompt("Vui lòng nhập Pass trong group để xem" ,"");
+            var pass = prompt("Vui lòng nhập Pass trong group để xe","");
             localStorage.setItem('password'+path, pass);
             if(pass != null && pass != ""){
                 list(path);
             }else{
-                alert("Sai mật khẩu, vào group xem pass lại!");
+                history.go(-1);
             }
         }else if(typeof obj != 'null'){
             list_files(path,obj.files);
@@ -141,7 +141,7 @@ function list_files(path,files){
                 });
             }
             var ext = p.split('.').pop();
-            if("|html|php|css|go|java|js|json|txt|sh|md|mp4|bmp|jpg|jpeg|png|gif|".indexOf(`|${ext}|`) >= 0){
+            if("|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|mkv|bmp|jpg|jpeg|png|gif|".indexOf(`|${ext}|`) >= 0){
 	            p += "?a=view";
 	            c += " view";
             }
@@ -183,7 +183,7 @@ function file(path){
 		return file_code(path);
 	}
 
-	if("|mp4|".indexOf(`|${ext}|`) >= 0){
+	if("|mp4|webm|mkv|".indexOf(`|${ext}|`) >= 0){
 		return file_video(path);
 	}
 
