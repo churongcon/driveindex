@@ -1041,7 +1041,7 @@ function file_pdf(path) {
   <script>
   var url = "https://" + window.location.hostname + window.location.pathname;
   var pdfjsLib = window['pdfjs-dist/build/pdf'];
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.js';
   var pdfDoc = null,
       pageNum = 1,
       pageRendering = false,
