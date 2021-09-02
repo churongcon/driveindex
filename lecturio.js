@@ -906,18 +906,8 @@ function file_video(path) {
 	<video id="vplayer" width="100%" height="100%" playsinline controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen']; data-plyr-config="{ "title": "${decodename}"}" data-poster="${poster}" style="--plyr-captions-text-color: #ffffff;--plyr-captions-background: #000000;">
 	  <source src="${url}" type="video/mp4" />
 	  <source src="${url}" type="video/webm" />
-	  <track kind="captions" label="Default" src="${caption}.srt" srclang="en" />
-    <track kind="captions" label="English" src="${caption}.en.srt" srclang="en" default />
-    <track kind="captions" label="Hindi" src="${caption}.hi.srt" srclang="hi" />
-    <track kind="captions" label="Russian" src="${caption}.ru.srt" srclang="ru" />
-    <track kind="captions" label="Malayalam" src="${caption}.ml.srt" srclang="ml" />
-    <track kind="captions" label="Korean" src="${caption}.ko.srt" srclang="ko" />
-    <track kind="captions" label="Japanese" src="${caption}.ja.srt" srclang="ja" />
-    <track kind="captions" label="Indonesian" src="${caption}.id.srt" srclang="id" />
-    <track kind="captions" label="German" src="${caption}.de.srt" srclang="de" />
-    <track kind="captions" label="French" src="${caption}.fr.srt" srclang="fr" />
-    <track kind="captions" label="Chinese" src="${caption}.zh.srt" srclang="zh" />
-    <track kind="captions" label="Arabic" src="${caption}.ar.srt" srclang="ar" />
+	  <track kind="captions" label="Default" src="${caption}.srt" srclang="en" default />
+    <track kind="captions" label="English" src="${caption}.srt" srclang="en" />
 	<track kind="captions" label="${UI.custom_srt_lang}" src="${caption}.${UI.custom_srt_lang}.srt" srclang="${UI.custom_srt_lang}" />
 	</video>
   </div>
